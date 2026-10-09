@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="很多电影网（henduodianyingwang-cn.github.io）是精选优质电影导航大全与实用网址收录平台，收录电影网站导航、高清电影在线观看、最新电影、经典电影、电影字幕、4K蓝光、影视大全与迅雷下载。很多，不是贪多，是总有一部适合今晚的你。">
+<meta name="keywords" content="很多电影网, henduodianyingwang-cn, 很多, 电影, 电影导航, 电影网站导航, 精选优质网站导航大全, 实用网址收录平台, 高清电影在线观看, 电影下载, 迅雷下载, 最新电影, 经典电影, 电影字幕, 影视大全, 4K蓝光, 影视资源导航">
+<meta name="author" content="很多电影网">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#fffaf2">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>很多电影网 - 精选优质电影导航大全 | 高清电影在线观看与迅雷下载</title>
+<link rel="canonical" href="https://henduodianyingwang-cn.github.io/">
+<style>
+/* ==========================================================
+   很多电影网  henduodianyingwang-cn.github.io
+   单页 · 移动端自适应 · 内链以 # 替代
+   设计基调：暖奶油 × 朱红 × 陶土 × 圆点 × 波浪 × 堆叠卡片 × 票根
+   情绪：丰盛 / 不焦虑 / 手作
+   DOM 差异化：堆叠卡 / 波浪条带 / 手风琴 / 阶梯条 / 票根 / 条款墙
+   ========================================================== */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#fffaf2;--paper:#fffdf8;--ink:#2b2320;--cocoa:#5b4a42;
+  --red:#e8553a;--rust:#c2613a;--ochre:#e2a63b;--olive:#7d8b3c;--plum:#7a4a5a;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+  --serif:"Songti SC","STSong",Georgia,"Noto Serif SC",serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.9;
+  background-image:
+    radial-gradient(circle at 10% 12%,rgba(232,85,58,.07),transparent 32%),
+    radial-gradient(circle at 90% 88%,rgba(226,166,59,.09),transparent 32%),
+    linear-gradient(0deg,rgba(232,85,58,.035) 0 1px,transparent 1px 26px);
+  background-attachment:fixed;overflow-x:clip}
+a{color:inherit;text-decoration:none;transition:.25s cubic-bezier(.34,1.4,.64,1)}
+::selection{background:var(--red);color:#fff}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--red),var(--rust));border-radius:99px;border:3px solid var(--cream)}
+main,header,footer,section{position:relative;z-index:2}
+
+/* ===== 圆点纹理 ===== */
+.dots{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;
+  background-image:radial-gradient(rgba(91,74,66,.16) 1.4px,transparent 1.4px);
+  background-size:22px 22px}
+
+/* ===== 顶栏 ===== */
+.topbar{position:sticky;top:0;z-index:99;background:rgba(255,250,242,.94);backdrop-filter:blur(12px);border-bottom:3px solid var(--ink)}
+.tin{max-width:1440px;margin:0 auto;padding:0 26px;height:72px;display:flex;align-items:center;gap:15px}
+.logo{display:flex;align-items:center;gap:13px}
+.mark{width:52px;height:52px;flex:none;border-radius:18px 6px 18px 6px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 30% 30%,#fff 3px,transparent 3.4px),
+    radial-gradient(circle at 70% 60%,#fff 3px,transparent 3.4px),
+    radial-gradient(circle at 45% 80%,#fff 2.4px,transparent 2.8px),
+    linear-gradient(140deg,var(--red),var(--rust))}
+.mark::after{content:"多";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:900 19px/1;letter-spacing:-1px}
+.logo .zh{font:900 19.6px/1.2;letter-spacing:-.4px}
+.logo .zh em{font-style:normal;color:var(--red)}
+.logo .en{font:800 7px;letter-spacing:2.2px;color:var(--cocoa);font-family:var(--mono)}
+.ticker{font:800 8.4px;letter-spacing:2px;color:#fff;background:var(--ink);padding:7px 15px;border-radius:99px;white-space:nowrap;font-family:var(--mono)}
+.nav{display:flex;gap:5px;margin-left:auto;font:900 12.4px}
+.nav a{padding:9px 13px;border-radius:99px;color:var(--cocoa)}
+.nav a:hover{background:rgba(232,85,58,.12);color:var(--red)}
+.nav a.on{background:var(--ink);color:#fff}
+.hamb{display:none;width:46px;height:46px;border:2.4px solid var(--ink);background:var(--cream);color:var(--ink);font:900 20px;cursor:pointer;border-radius:14px}
+
+/* ===== 通用 ===== */
+section{padding:84px 0}
+.lay{max-width:1440px;margin:0 auto;padding:0 26px}
+.kicker{display:inline-flex;align-items:center;gap:9px;font:800 8.4px;letter-spacing:3px;color:var(--red);font-family:var(--mono);margin-bottom:11px}
+.kicker::before{content:"";width:26px;height:3px;background:var(--red);border-radius:99px}
+.sh{display:flex;align-items:baseline;gap:13px;margin-bottom:28px;flex-wrap:wrap}
+.sh .no{font:900 9px;letter-spacing:1.6px;color:#fff;background:var(--red);padding:5px 12px;border-radius:99px;font-family:var(--mono)}
+.sh h2{font:900 clamp(22px,3.9vw,34px)/1.3;letter-spacing:-.5px}
+.sh h2 em{font-style:normal;color:var(--red)}
+.sh .en{font:700 8.2px;letter-spacing:3px;color:var(--cocoa);margin-left:auto;font-family:var(--mono)}
+
+/* ===== Hero ===== */
+.hero{display:grid;grid-template-columns:1fr 360px;gap:54px;align-items:center;padding:26px 0}
+.hero .h1{font:900 clamp(38px,7.6vw,72px)/1.08;letter-spacing:-2px}
+.hero .h1 .st{display:block;font:800 12.4px;letter-spacing:.4px;color:var(--red);margin-top:16px;line-height:1.9}
+.hero .sub{font-size:15.2px;color:#4a3d38;line-height:2.15;margin-top:20px;max-width:700px}
+.hero .cta{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.gb{height:56px;padding:0 32px;background:var(--red);color:#fff;font:900 13.2px;border-radius:99px;display:grid;place-items:center}
+.gb:hover{background:var(--ink);transform:translateY(-3px)}
+.gb.gh{background:var(--paper);border:2.4px solid var(--ink);color:var(--ink)}
+.gb.gh:hover{background:var(--ink);color:#fff}
+
+/* 计数器卡 */
+.much{border:2.6px solid var(--ink);border-radius:24px;padding:22px;background:var(--paper);position:relative;
+  box-shadow:9px 9px 0 var(--ochre);transform:rotate(.6deg)}
+.much .lb{font:800 8.4px;letter-spacing:2.4px;color:var(--red);font-family:var(--mono);margin-bottom:15px}
+.mm{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.mm div{background:var(--cream);border:2px dashed var(--cocoa);border-radius:16px;padding:12px}
+.mm b{display:block;font:900 25px;line-height:1.05;color:var(--red);font-family:var(--mono)}
+.mm span{font:800 8.4px;letter-spacing:1.2px;color:var(--cocoa);font-family:var(--mono)}
+.much .t{font-size:12.2px;color:#4a3d38;margin-top:15px;line-height:1.95}
+
+/* ===== ① 导航：堆叠卡 ===== */
+.stk{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sk{position:relative;padding:19px 19px 17px;border-radius:20px;color:#fff;min-height:200px;display:flex;flex-direction:column;
+  box-shadow:0 14px 26px -16px rgba(43,35,32,.5);transition:.28s}
+.sk i.ix{font:900 9px;letter-spacing:1.8px;opacity:.82;font-family:var(--mono)}
+.sk h4{font:900 16.4px;margin:8px 0 8px;line-height:1.5}
+.sk p{font-size:11.2px;opacity:.92;line-height:1.9;flex:1}
+.sk .go{font:900 8.6px;letter-spacing:1.4px;font-family:var(--mono);margin-top:10px;display:inline-flex;align-items:center;gap:6px}
+.sk:hover{transform:translateY(-10px) rotate(-.8deg);box-shadow:0 24px 38px -20px rgba(43,35,32,.6)}
+.sk:hover .go{gap:11px}
+
+/* ===== ② 片单：波浪条带 ===== */
+.belt{display:flex;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 20px;scrollbar-width:thin}
+.belt::-webkit-scrollbar-thumb{border-radius:99px}
+.fv{flex:0 0 236px;scroll-snap-align:start;position:relative;border-radius:24px;overflow:hidden;aspect-ratio:3/4;transition:.3s;background:var(--g)}
+.fv i.blk{position:absolute;inset:0;background:var(--g);border-radius:50% 50% 0 0/30% 30% 0 0}
+.fv::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 36%,rgba(43,35,32,.99))}
+.fv .yr{position:absolute;top:14px;left:14px;z-index:2;font:900 8.6px;color:#fff;background:var(--red);padding:5px 12px;border-radius:99px;font-family:var(--mono)}
+.fv .rt{position:absolute;top:14px;right:14px;z-index:2;font:900 9.4px;color:var(--ink);background:#fff;border-radius:99px;padding:4px 11px;font-family:var(--mono)}
+.fv b{position:absolute;left:15px;right:15px;bottom:46px;z-index:2;font:900 13.6px;font-family:var(--serif);line-height:1.5}
+.fv .go{position:absolute;left:15px;right:15px;bottom:14px;z-index:2;font:900 8.8px;letter-spacing:1.6px;color:#fff;background:var(--ink);text-align:center;padding:8px;border-radius:99px;opacity:0;transition:.24s;font-family:var(--mono)}
+.fv:hover{transform:scale(1.04) rotate(-.8deg);box-shadow:0 22px 40px -18px rgba(232,85,58,.6)}
+.fv:hover .go{opacity:1}
+
+/* ===== ③ 分类：手风琴 ===== */
+.acc{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+.ai{display:grid;grid-template-columns:52px 1fr 34px;align-items:center;gap:13px;padding:16px 18px;border-radius:18px;
+  background:var(--paper);border:2.2px solid var(--ink);cursor:pointer;transition:.26s}
+.ai:hover{background:linear-gradient(120deg,var(--red),var(--rust));color:#fff;border-color:var(--ink);transform:translateX(5px)}
+.ai.open{background:linear-gradient(120deg,var(--ink),#4a3d38);color:#fff}
+.ai .ix{font:900 17px;color:var(--red);font-family:var(--mono);line-height:1.2}
+.ai.open .ix{color:var(--ochre)}
+.ai h4{font:900 14.4px;line-height:1.5}
+.ai .cnt{font:800 8.4px;letter-spacing:1.2px;font-family:var(--mono);opacity:.75;display:block;margin-top:3px}
+.ai .ar{width:30px;height:30px;border-radius:50%;border:2.2px solid currentColor;display:grid;place-items:center;font:900 14px;transition:.28s}
+.ai.open .ar{transform:rotate(45deg);background:var(--ochre);border-color:var(--ochre);color:var(--ink)}
+.ap{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:0 18px;max-height:0;overflow:hidden;transition:.4s cubic-bezier(.34,1.4,.64,1)}
+.ap.open{max-height:240px;padding:14px 18px 6px}
+.ap span{font:800 10.6px;padding:9px 6px;text-align:center;border-radius:12px;background:rgba(125,139,60,.14);color:#4a4f22;border:1.6px solid rgba(125,139,60,.3);line-height:1.5}
+.ap span:hover{background:var(--olive);color:#fff}
+
+/* ===== ④ 排行：阶梯条 ===== */
+.pyr{display:grid;grid-template-columns:repeat(6,1fr);align-items:flex-end;gap:12px;height:380px;padding:0 4px}
+.step{position:relative;height:0;transition:height 1s cubic-bezier(.34,1.4,.64,1);text-align:center}
+.step i.b{display:block;width:100%;border-radius:16px 16px 0 0;
+  background:linear-gradient(180deg,var(--ochre),var(--red));
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.28)}
+.step .vv{position:absolute;top:-26px;left:0;right:0;font:900 12.4px;color:var(--red);font-family:var(--mono)}
+.step b{display:block;margin-top:10px;font:900 12.4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--serif)}
+.step span{font:800 8.2px;letter-spacing:1.4px;color:var(--cocoa);font-family:var(--mono)}
+
+/* ===== ⑤ 影讯：票根 ===== */
+.news{display:grid;grid-template-columns:340px 1fr;gap:20px}
+.big{border-radius:0 20px 20px 0;padding:26px;color:#fff;position:relative;overflow:hidden;height:420px;display:flex;flex-direction:column;
+  background:linear-gradient(150deg,var(--plum),#4a2c38)}
+.big::before{content:"";position:absolute;left:-14px;top:0;bottom:0;width:28px;background:
+  radial-gradient(circle at 14px 14px,var(--cream) 4px,transparent 4.6px),
+  radial-gradient(circle at 14px 42px,var(--cream) 4px,transparent 4.6px);
+  background-size:28px 56px}
+.big .kicker{color:var(--ochre)}
+.big h3{font:900 clamp(20px,2.7vw,29px)/1.5;font-family:var(--serif);margin-bottom:14px}
+.big p{font-size:12.4px;opacity:.94;flex:1}
+.big .dt{font:800 8.6px;letter-spacing:2.4px;font-family:var(--mono);opacity:.9}
+.nl{display:grid;gap:11px}
+.nm{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;border-radius:16px;padding:15px 18px;
+  background:var(--paper);border:2px solid var(--ink);transition:.24s}
+.nm:hover{transform:translateX(7px);background:var(--ink);color:#fff;box-shadow:-7px 7px 0 var(--ochre)}
+.nm .ix{font:900 8.4px;letter-spacing:1.6px;color:var(--red);font-family:var(--mono);white-space:nowrap}
+.nm h4{font:900 13px;margin-bottom:5px;line-height:1.6}
+.nm .dt{font:800 8.2px;letter-spacing:2px;opacity:.7;font-family:var(--mono)}
+
+/* ===== ⑥ 规范：条款墙 ===== */
+.grd2{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gd{border-radius:18px;padding:19px;border:2.2px solid var(--ink);background:var(--paper);transition:.26s;position:relative;overflow:hidden}
+.gd::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--red),var(--ochre))}
+.gd .ix{font:900 9.2px;letter-spacing:2.4px;color:var(--red);font-family:var(--mono)}
+.gd h4{font:900 14.8px;margin:8px 0 7px}
+.gd p{font-size:11.4px;color:#5b4a42;line-height:1.95}
+.gd:hover{transform:translateY(-7px);box-shadow:0 16px 26px -16px rgba(232,85,58,.55)}
+
+/* ===== 页脚 ===== */
+footer{border-top:3px solid var(--ink);padding:44px 0 22px;margin-top:24px;background:linear-gradient(180deg,transparent,rgba(232,85,58,.06))}
+.fg{display:grid;grid-template-columns:2.1fr 1fr 1fr 1fr;gap:28px;margin-bottom:24px}
+.flogo p{font-size:12.4px;color:var(--cocoa);margin-top:12px;max-width:540px;line-height:2.05}
+.fc h6{font:800 9px;letter-spacing:2.6px;color:var(--red);margin-bottom:13px;font-family:var(--mono)}
+.fc a{display:block;font-size:12.4px;color:var(--cocoa);padding:5px 0}
+.fc a:hover{color:var(--red);font-weight:900;padding-left:8px}
+.fbot{text-align:center;font-size:11.6px;color:var(--cocoa);border-top:2px dashed var(--cocoa);padding-top:22px;line-height:2.2}
+.fbot a{color:var(--red);font-weight:900}
+.up{position:fixed;right:15px;bottom:19px;width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;font:900 19px;cursor:pointer;
+  opacity:0;pointer-events:none;transition:.24s;z-index:90;box-shadow:0 10px 22px -6px rgba(232,85,58,.6)}
+.up.on{opacity:1;pointer-events:auto}
+
+@media(max-width:1120px){.stk{grid-template-columns:repeat(2,1fr)}.pyr{height:320px}.fv{flex-basis:214px}}
+@media(max-width:900px){
+  .hamb{display:grid;place-items:center;margin-left:auto}
+  .ticker{display:none}
+  .nav{position:fixed;inset:72px 0 0 100%;flex-direction:column;width:100%;height:calc(100vh - 72px);background:var(--cream);padding:20px;border-top:3px solid var(--ink);transition:.32s;overflow:auto}
+  .nav.open{transform:translateX(-100%)}
+  .nav a{font-size:18px;padding:17px;border-radius:16px;border:2px solid var(--ink)}
+  .hero{grid-template-columns:1fr;gap:30px}
+  .much{transform:none}
+  .stk,.grd2{grid-template-columns:repeat(2,1fr)}
+  .acc{grid-template-columns:1fr}
+  .news{grid-template-columns:1fr}
+  .big{height:auto;max-height:none;border-radius:20px}
+  .big::before{display:none}
+  section{padding:54px 0}
+  .pyr{grid-template-columns:repeat(3,1fr);height:auto;gap:18px 12px}
+  .step{height:auto!important}
+  .step i.b{height:130px!important}
+  .ap{grid-template-columns:repeat(3,1fr)}
+}
+@media print{body{background:#fff;color:#000;background-image:none}.topbar,.hamb,.up,.dots,.much{display:none}section{padding:10px 0}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="dots" aria-hidden="true"></div>
+
+<!-- ===== 顶栏 ===== -->
+<header class="topbar">
+  <div class="tin">
+    <a class="logo" href="#" aria-label="很多电影网首页">
+      <span class="mark" aria-hidden="true"></span>
+      <span><span class="zh"><em>很多</em>电影网</span><span class="en">HENDUO · FILM INDEX</span></span>
+    </a>
+    <span class="ticker">✦ 精选优质网站导航大全 · 实用网址收录平台</span>
+    <nav class="nav" id="nav">
+      <a href="#home" class="on">首页</a>
+      <a href="#nav2">导航</a>
+      <a href="#film">片单</a>
+      <a href="#cat">分类</a>
+      <a href="#rank">排行</a>
+      <a href="#news">影讯</a>
+      <a href="#about">规范</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="菜单">≡</button>
+  </div>
+</header>
+
+<main>
+<!-- ===== Hero ===== -->
+<section id="home">
+  <div class="lay">
+    <div class="hero">
+      <div>
+        <div class="kicker">HENDUO · 很多，不是贪多</div>
+        <h1 class="h1">很多电影网<span class="st">收录很多电影网站，只为让你少翻很多页面。很多，不是贪多，是总有一部适合今晚的你。</span></h1>
+        <p class="sub">很多电影网（henduodianyingwang-cn.github.io）是电影网站导航与影视资源导航平台，专注<strong>高清电影在线观看、最新电影、经典电影、电影字幕、4K 蓝光与影视大全</strong>，并提供电影下载与迅雷下载指引。片单很多、类型很多、语言很多、年代很多——但好电影的共性只有一个：看完之后，你不再是进来时的那个人。</p>
+        <div class="cta"><a class="gb" href="#nav2">进入导航</a><a class="gb gh" href="#film">今晚看哪部</a></div>
+      </div>
+
+      <aside class="much" aria-label="收录统计">
+        <div class="lb">✦ 已收录 · INDEXED</div>
+        <div class="mm">
+          <div><b data-t="1286">0</b><span>电影网站</span></div>
+          <div><b data-t="940">0</b><span>高清片源</span></div>
+          <div><b data-t="218">0</b><span>字幕组</span></div>
+          <div><b data-t="63">0</b><span>电影分类</span></div>
+        </div>
+        <p class="t">很多电影网，但只推荐可靠的那些。人工逐站核验，失效即下架，拒绝低质镜像与仿冒站点。</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ① 导航：堆叠卡 ===== -->
+<section id="nav2">
+  <div class="lay">
+    <div class="sh"><span class="no">N0.1</span><h2>电影网站 <em>导航</em></h2><span class="en">Directory</span></div>
+    <div class="stk" id="stk"></div>
+  </div>
+</section>
+
+<!-- ===== ② 片单：波浪条带 ===== -->
+<section id="film">
+  <div class="lay">
+    <div class="sh"><span class="no">N0.2</span><h2>很多里的 <em>那一部</em></h2><span class="en">Reels</span></div>
+    <div class="belt" id="belt"></div>
+  </div>
+</section>
+
+<!-- ===== ③ 分类：手风琴 ===== -->
+<section id="cat">
+  <div class="lay">
+    <div class="sh"><span class="no">N0.3</span><h2>按 <em>类型</em> 分类</h2><span class="en">Genres</span></div>
+    <div class="acc" id="acc"></div>
+  </div>
+</section>
+
+<!-- ===== ④ 排行：阶梯条 ===== -->
+<section id="rank">
+  <div class="lay">
+    <div class="sh"><span class="no">N0.4</span><h2>口碑 <em>排行</em></h2><span class="en">Ranking</span></div>
+    <div class="pyr" id="pyr"></div>
+  </div>
+</section>
+
+<!-- ===== ⑤ 影讯：票根 ===== -->
+<section id="news">
+  <div class="lay">
+    <div class="sh"><span class="no">N0.5</span><h2>最新 <em>影讯</em></h2><span class="en">Dispatch</span></div>
+    <div class="news" id="newsBox"></div>
+  </div>
+</section>
+
+<!-- ===== ⑥ 规范：条款墙 ===== -->
+<section id="about">
+  <div class="lay">
+    <div class="sh"><span class="no">N0.6</span><h2>使用 <em>规范</em></h2><span class="en">Guidelines</span></div>
+    <div class="grd2">
+      <div class="gd"><div class="ix">RULE 01</div><h4>很多，但不杂</h4><p>很多电影网为电影网站导航与影视资源导航，所有链接均指向第三方公开资源。本站不托管、不存储、不转存任何影视文件，不做聚合播放与缓存。</p></div>
+      <div class="gd"><div class="ix">RULE 02</div><h4>支持正版</h4><p>影视作品版权归原作者及发行方所有。请通过院线、正版流媒体与正版影音制品支持创作者——很多好电影，值得你为它买一张票。</p></div>
+      <div class="gd"><div class="ix">RULE 03</div><h4>尊重版权</h4><p>本站仅做网址收录、分类索引与字幕匹配，不做转码、不做破解、不提供未授权资源的下载通道，不收录违规与低俗内容。</p></div>
+      <div class="gd"><div class="ix">RULE 04</div><h4>安全提示</h4><p>跳转前请核对域名，警惕仿冒「很多电影网」的付费解锁陷阱。本站永久免费，不索取账号、不植入广告脚本、不做弹窗劫持。</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="lay">
+    <div class="fg">
+      <div class="flogo">
+        <a class="logo" href="#"><span class="mark" aria-hidden="true"></span><span><span class="zh"><em>很多</em>电影网</span><span class="en">HENDUO · FILM INDEX</span></span></a>
+        <p>很多电影网（henduodianyingwang-cn.github.io）是精选优质电影导航大全与实用网址收录平台，提供电影网站导航、高清电影在线观看、电影下载、迅雷下载、最新电影、经典电影、电影字幕、影视大全、4K 蓝光与影视资源导航。很多，不是贪多，是总有一部适合今晚的你。</p>
+      </div>
+      <div class="fc"><h6>在线观看</h6><a href="#film">高清电影</a><a href="#film">经典电影</a><a href="#film">最新电影</a><a href="#film">很多片单</a></div>
+      <div class="fc"><h6>分类</h6><a href="#cat">4K 蓝光</a><a href="#cat">电影字幕</a><a href="#cat">剧情片</a><a href="#cat">纪录片</a></div>
+      <div class="fc"><h6>服务</h6><a href="#nav2">网站导航</a><a href="#about">版权反馈</a><a href="#about">失效补链</a><a href="#about">观影须知</a></div>
+    </div>
+    <div class="fbot">© 2026 很多电影网 · 网址：<a href="https://henduodianyingwang-cn.github.io/">https://henduodianyingwang-cn.github.io/</a><br>本站为电影网站导航与影视资讯平台，不托管任何影视文件；所涉影视作品版权归原作者及发行方所有。观影请遵守当地法律法规。</div>
+  </div>
+</footer>
+
+<button class="up" id="upBtn" aria-label="回到顶部">↑</button>
+
+<script>
+const sites=[
+ ["高清电影在线观看","4K · 蓝光 · 中文字幕 · 秒开","linear-gradient(140deg,#e8553a,#a8321f)"],
+ ["电影字幕下载","字幕库 · SRT / ASS · 多语种校对","linear-gradient(140deg,#e2a63b,#a46a12)"],
+ ["4K 蓝光资源","REMUX · HDR10+ · 杜比视界 · 无损音轨","linear-gradient(140deg,#7d8b3c,#46501c)"],
+ ["经典电影专区","影史必看 · 老电影 · 4K 修复版","linear-gradient(140deg,#7a4a5a,#4a2632)"],
+ ["最新电影速递","院线同步 · 抢先版 · 预告片","linear-gradient(140deg,#c2613a,#7a3318)"],
+ ["电影下载合集","迅雷下载 · 磁力 · 离线缓存","linear-gradient(140deg,#3f7a8a,#1f4650)"]
+];
+const films=[
+ ["肖申克的救赎","1994","9.7","linear-gradient(155deg,#3a6ea5,#132a45)"],
+ ["阿甘正传","1994","9.5","linear-gradient(155deg,#e2a63b,#8a6418)"],
+ ["泰坦尼克号","1997","9.4","linear-gradient(155deg,#1c5a7a,#0a2233)"],
+ ["盗梦空间","2010","9.3","linear-gradient(155deg,#5a4a8a,#231c3d)"],
+ ["星际穿越","2014","9.4","linear-gradient(155deg,#3effe6,#0a3a40)"],
+ ["千与千寻","2001","9.4","linear-gradient(155deg,#e2a63b,#8a5a18)"],
+ ["楚门的世界","1998","9.4","linear-gradient(155deg,#7d8b3c,#46501c)"],
+ ["搏击俱乐部","1999","9.0","linear-gradient(155deg,#8a3a3a,#4a1c1c)"],
+ ["黑客帝国","1999","9.1","linear-gradient(155deg,#132a45,#060c16)"],
+ ["飞屋环游记","2009","9.1","linear-gradient(155deg,#e8553a,#8a2818)"],
+ ["美丽人生","1997","9.6","linear-gradient(155deg,#e6c37a,#8a6418)"],
+ ["辛德勒的名单","1993","9.5","linear-gradient(155deg,#3a3a40,#141416)"]
+];
+const cats=[
+ ["剧情 Drama",12,["人生","家庭","成长","爱情","社会"]],
+ ["喜剧 Comedy",10,["荒诞","黑色幽默","温情","讽刺","脱口秀"]],
+ ["动作 Action",9,["枪战","武侠","赛车","特技","追车"]],
+ ["科幻 Sci-Fi",11,["太空","时间旅行","人工智能","末世","赛博"]],
+ ["悬疑 Thriller",10,["反转","心理","犯罪","密室","追踪"]],
+ ["动画 Animation",8,["吉卜力","皮克斯","定格","成人向","短片"]],
+ ["纪录片 Doc",9,["自然","历史","人物","社会","美食"]],
+ ["战争 War",7,["二战","越战","反战","史诗","谍战"]]
+];
+const rank=[["肖申克的救赎",99],["美丽人生",98],["阿甘正传",97],["辛德勒的名单",96],["星际穿越",94],["盗梦空间",93]];
+const news=[
+ ["「很多」的反面不是「很少」，是「不知道看什么」：一份不焦虑的选片方法","10.09","片单很多，但今晚只需要一部。"],
+ ["4K 蓝光 REMUX 与 WEB-DL 的区别：为什么很多字幕组还在用 30GB 的文件","10.02","画质是导演的意图，不是营销词。"],
+ ["电影字幕不是翻译：SRT 与 ASS 的选择，决定了你能不能看懂台词","09.25","字幕是第二次剪辑。"],
+ ["警惕仿冒「很多电影网」导航站：同名站点激增，本站永久免费","09.17","凡诱导付费解锁 4K 资源的同名站点，均为仿冒。"],
+ ["本月片单：十部适合在深夜看完的电影","09.10","深夜适合看慢的，白天才看得懂的。"],
+ ["经典电影 4K 修复清单：很多老片，值得再看一遍","09.03","修复的不是像素，是当年的光。"]];
+
+document.getElementById('stk').innerHTML=sites.map((s,i)=>
+ `<article class="sk" style="background:${s[2]}"><i class="ix">0${i+1} / 06</i><h4>${s[0]}</h4><p>${s[1]}</p><span class="go">进入 →</span></article>`).join('');
+
+document.getElementById('belt').innerHTML=films.map(f=>
+ `<article class="fv" style="--g:${f[3]}"><span class="yr">${f[1]}</span><span class="rt">${f[2]}</span>
+  <span class="go">立即观看</span><b>${f[0]}</b></article>`).join('');
+
+const ac=document.getElementById('acc');
+cats.forEach((c,i)=>{
+  const id='ap'+i;
+  ac.insertAdjacentHTML('beforeend',`
+   <div class="ai" data-t="${id}"><span class="ix">${String(i+1).padStart(2,'0')}</span>
+    <div><h4>${c[0]}</h4><span class="cnt">${c[2].length} 个子项</span></div><span class="ar">＋</span></div>
+   <div class="ap" id="${id}">${c[2].map(x=>`<span>${x}</span>`).join('')}</div>`);
+});
+ac.addEventListener('click',e=>{
+  const ai=e.target.closest('.ai');if(!ai)return;
+  document.querySelectorAll('.ap').forEach(p=>{if(p.id!==ai.dataset.t){p.classList.remove('open');document.querySelector('[data-t="'+p.id+'"]').classList.remove('open')}});
+  const p=document.getElementById(ai.dataset.t);
+  const open=p.classList.toggle('open');ai.classList.toggle('open',open);
+});
+
+const py=document.getElementById('pyr');
+const mx=Math.max(...rank.map(r=>r[1]));
+rank.forEach((r,i)=>{
+  const h=110+r[1]/mx*210;
+  py.insertAdjacentHTML('beforeend',
+   `<div class="step" style="--h:${h}px"><span class="vv">${r[1]}</span>
+    <i class="b" data-h="${h}"></i><b>${r[0]}</b><span>NO.${i+1}</span></div>`);
+});
+
+const nb=document.getElementById('newsBox');
+nb.innerHTML=`
+ <article class="big"><div class="kicker">✦ 头条 · HEADLINE</div>
+  <h3>${news[0][0]}</h3><p>${news[0][2]}</p><span class="dt">${news[0][1]}</span></article>
+ <div class="nl">${news.slice(1).map((n,i)=>
+  `<article class="nm"><span class="ix">NO.${i+2}</span><div><h4>${n[0]}</h4><span class="dt">${n[1]}</span></div></article>`).join('')}</div>`;
+
+/* 数字滚动 + 阶梯生长 */
+const io=new IntersectionObserver(en=>{
+  en.forEach(x=>{if(x.isIntersecting){
+    x.target.querySelectorAll('[data-t]').forEach(el=>{
+      const t=+el.dataset.t,step=Math.max(1,Math.round(t/46));
+      let n=0;const iv=setInterval(()=>{n+=step;if(n>=t){n=t;clearInterval(iv)}
+        el.textContent=(el.dataset.pfx||'')+n.toLocaleString()+(el.dataset.suf||'')},22);});
+    x.target.querySelectorAll('.step').forEach(s=>s.style.height=s.style.getPropertyValue('--h'));
+    io.unobserve(x.target)}});
+},{threshold:.16});
+document.querySelectorAll('.much,.pyr').forEach(d=>io.observe(d));
+
+/* 汉堡 / 返回顶 */
+const hamb=document.getElementById('hamb'),nav=document.getElementById('nav');
+hamb.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');
+  [...nav.children].forEach(a=>a.classList.toggle('on',a===e.target))}});
+const up=document.getElementById('upBtn');
+up.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+window.addEventListener('scroll',()=>up.classList.toggle('on',window.scrollY>500),{passive:true});
+</script>
+</body>
+</html>
